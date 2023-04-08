@@ -13,4 +13,11 @@ public class EmployeeBook {
         Employee newEmployee = new Employee(FIO, department, salary);
         employees[size++] = newEmployee;
     }
+
+    public void printAllEmployees() {
+        for (int i = 0; i < employees.length; i++) {
+            Employee employee = employees[i];
+            System.out.println(employee);
+        }
+    }
 }
