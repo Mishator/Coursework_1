@@ -29,4 +29,20 @@ public class EmployeeBook {
         }
         System.out.println("Сумма затрат на зарплаты в месяц составляет " + sum + " рублей.");
     }
+
+    public void getEmployeeMinimumSalary() {
+        Employee employee = employees[0];
+        double minSalary = employee.getSalary();
+        for (int i = 1; i < employees.length; i++) {
+            employee = employees[i];
+            if (employee.getSalary() < minSalary) {
+                minSalary = employee.getSalary();
+            }
+        }
+        for (Employee anyEmployee : employees) {
+            if (anyEmployee.getSalary() == minSalary) {
+                System.out.println("Сотрудник с минимальной зарплатой: " + anyEmployee);
+            }
+        }
+    }
 }
