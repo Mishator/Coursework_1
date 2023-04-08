@@ -20,4 +20,13 @@ public class EmployeeBook {
             System.out.println(employee);
         }
     }
+
+    public void getSummOfSalary() {
+        double sum = 0;
+        for (int i = 0; i < employees.length; i++) {
+            Employee employee = employees[i];
+            sum += employee.getSalary();
+        }
+        System.out.println("Сумма затрат на зарплаты в месяц составляет " + sum + " рублей.");
+    }
 }
