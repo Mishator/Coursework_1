@@ -38,4 +38,8 @@ public class Employee {
             this.Salary = salary;
         } else System.out.println("Ошибка! Зарплата должна быть положительным числом!");
     }
+
+    public String toString() {
+        return "ФИО сотрудника: " + FIO + ". Отдел №" + department + ". Зарплата: " + salary + ". Идентификационный номер: " + id;
+    }
 }
