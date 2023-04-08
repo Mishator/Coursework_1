@@ -45,4 +45,20 @@ public class EmployeeBook {
             }
         }
     }
+
+    public void getEmployeeMaximumSalary() {
+        Employee employee = employees[0];
+        double maxSalary = employee.getSalary();
+        for (int i = 1; i < employees.length; i++) {
+            employee = employees[i];
+            if (employee.getSalary() > maxSalary) {
+                maxSalary = employee.getSalary();
+            }
+        }
+        for (Employee anyEmployee : employees) {
+            if (anyEmployee.getSalary() == maxSalary) {
+                System.out.println("Сотрудник с максимальной зарплатой: " + anyEmployee);
+            }
+        }
+    }
 }
