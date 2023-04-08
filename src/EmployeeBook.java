@@ -61,4 +61,15 @@ public class EmployeeBook {
             }
         }
     }
+
+    public void getAverageSalary() {
+        double sum = 0;
+        double averageSalary;
+        for (int i = 0; i < employees.length; i++) {
+            Employee employee = employees[i];
+            sum += employee.getSalary();
+        }
+        averageSalary = sum / employees.length;
+        System.out.println("Среднее значение зарплат составляет: " + averageSalary + " рублей.");
+    }
 }
