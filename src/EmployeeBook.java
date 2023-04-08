@@ -72,4 +72,10 @@ public class EmployeeBook {
         averageSalary = sum / employees.length;
         System.out.println("Среднее значение зарплат составляет: " + averageSalary + " рублей.");
     }
+    public void printAllFullNames() {
+        for (int i = 0; i < employees.length; i++) {
+            Employee employee = employees[i];
+            System.out.println(employee.getFIO());
+        }
+    }
 }

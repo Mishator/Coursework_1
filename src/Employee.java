@@ -2,7 +2,8 @@ public class Employee {
     private String FIO;
     private int Department;
     private double Salary;
-    private static int id;
+    private int id;
+    private static int counter = 1;
 
     public Employee(String FIO, int department, double salary) {
         this.FIO = FIO;
@@ -12,7 +13,7 @@ public class Employee {
     }
 
     public int getId() {
-        return this.id;
+        return id;
     }
 
     public String getFIO() {
@@ -40,6 +41,6 @@ public class Employee {
     }
 
     public String toString() {
-        return "ФИО сотрудника: " + FIO + ". Отдел №" + department + ". Зарплата: " + salary + ". Идентификационный номер: " + id;
+        return "ФИО сотрудника: " + FIO + ". Отдел №" + Department + ". Зарплата: " + Salary + ". Идентификационный номер: " + id;
     }
 }
