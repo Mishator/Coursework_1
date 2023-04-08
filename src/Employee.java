@@ -10,4 +10,20 @@ public class Employee {
         this.Salary = salary;
         id = counter++;
     }
+
+    public int getId() {
+        return this.id;
+    }
+
+    public String getFIO() {
+        return this.FIO;
+    }
+
+    public int getDepartment() {
+        return this.Department;
+    }
+
+    public double getSalary() {
+        return this.Salary;
+    }
 }
