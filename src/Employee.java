@@ -26,4 +26,16 @@ public class Employee {
     public double getSalary() {
         return this.Salary;
     }
+
+    public void setDepartment(int department) {
+        if (department > 0) {
+            this.Department = department;
+        } else System.out.println("Ошибка! Номер отдела должен быть положительным числом!");
+    }
+
+    public void setSalary(double salary) {
+        if (salary > 0) {
+            this.Salary = salary;
+        } else System.out.println("Ошибка! Зарплата должна быть положительным числом!");
+    }
 }
