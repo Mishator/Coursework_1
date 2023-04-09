@@ -11,7 +11,6 @@ public class Main {
         employeeBook.addEmployee("Яковлев Иван Александрович", 3, 51275);
         employeeBook.addEmployee("Мантуров Глеб Макарович", 4, 48900);
         employeeBook.addEmployee("Башаров Марат Маратович", 5, 89990);
-        employeeBook.addEmployee("Мосин Владислав Владимирович", 3,45000);
 
         employeeBook.getSummOfSalary();
         System.out.println();

@@ -15,16 +15,14 @@ public class EmployeeBook {
     }
 
     public void printAllEmployees() {
-        for (int i = 0; i < employees.length; i++) {
-            Employee employee = employees[i];
+        for (Employee employee : employees) {
             System.out.println(employee);
         }
     }
 
     public void getSummOfSalary() {
         double sum = 0;
-        for (int i = 0; i < employees.length; i++) {
-            Employee employee = employees[i];
+        for (Employee employee : employees) {
             sum += employee.getSalary();
         }
         System.out.println("Сумма затрат на зарплаты в месяц составляет " + sum + " рублей.");
@@ -65,16 +63,14 @@ public class EmployeeBook {
     public void getAverageSalary() {
         double sum = 0;
         double averageSalary;
-        for (int i = 0; i < employees.length; i++) {
-            Employee employee = employees[i];
+        for (Employee employee : employees) {
             sum += employee.getSalary();
         }
         averageSalary = sum / employees.length;
         System.out.println("Среднее значение зарплат составляет: " + averageSalary + " рублей.");
     }
     public void printAllFullNames() {
-        for (int i = 0; i < employees.length; i++) {
-            Employee employee = employees[i];
+        for (Employee employee : employees) {
             System.out.println(employee.getFIO());
         }
     }
