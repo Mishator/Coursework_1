@@ -20,8 +20,11 @@ public class Main {
 
         employeeBook.getEmployeeMinimumSalary();
         System.out.println();
+        System.out.println("Минимальная зарплата у " + employeeBook.getEmployeeMinimumSalary());
 
         employeeBook.getEmployeeMaximumSalary();
+        System.out.println();
+        System.out.println("Максимальная зарплата у " + employeeBook.getEmployeeMaximumSalary());
         System.out.println();
 
         employeeBook.printAllFullNames();
@@ -29,5 +32,6 @@ public class Main {
 
         employeeBook.printAllEmployees();
         System.out.println();
+
     }
 }

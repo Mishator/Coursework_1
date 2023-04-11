@@ -4,7 +4,9 @@ public class EmployeeBook {
 
     public EmployeeBook() {
         this.employees = new Employee[10];
+
     }
+
 
     public void addEmployee(String FIO, int department, double salary) {
         if (size >= employees.length) {
@@ -28,37 +30,28 @@ public class EmployeeBook {
         System.out.println("Сумма затрат на зарплаты в месяц составляет " + sum + " рублей.");
     }
 
-    public void getEmployeeMinimumSalary() {
-        Employee employee = employees[0];
-        double minSalary = employee.getSalary();
+    public Employee getEmployeeMinimumSalary() {
+        Employee minEmployee = employees[0];
         for (int i = 1; i < employees.length; i++) {
-            employee = employees[i];
-            if (employee.getSalary() < minSalary) {
-                minSalary = employee.getSalary();
+            if (employees[i].getSalary() < minEmployee.getSalary()) {
+                minEmployee = employees[i];
             }
+
         }
-        for (Employee anyEmployee : employees) {
-            if (anyEmployee.getSalary() == minSalary) {
-                System.out.println("Сотрудник с минимальной зарплатой: " + anyEmployee);
-            }
-        }
+        return minEmployee;
     }
 
-    public void getEmployeeMaximumSalary() {
-        Employee employee = employees[0];
-        double maxSalary = employee.getSalary();
+
+    public Employee getEmployeeMaximumSalary() {
+        Employee maxEmployee = employees[0];
         for (int i = 1; i < employees.length; i++) {
-            employee = employees[i];
-            if (employee.getSalary() > maxSalary) {
-                maxSalary = employee.getSalary();
+            if (employees[i].getSalary() > maxEmployee.getSalary()) {
+                maxEmployee = employees[i];
             }
         }
-        for (Employee anyEmployee : employees) {
-            if (anyEmployee.getSalary() == maxSalary) {
-                System.out.println("Сотрудник с максимальной зарплатой: " + anyEmployee);
-            }
-        }
+        return maxEmployee;
     }
+
 
     public void getAverageSalary() {
         double sum = 0;
@@ -73,5 +66,6 @@ public class EmployeeBook {
         for (Employee employee : employees) {
             System.out.println(employee.getFIO());
         }
+
     }
 }

@@ -43,4 +43,6 @@ public class Employee {
     public String toString() {
         return "ФИО сотрудника: " + FIO + ". Отдел №" + Department + ". Зарплата: " + Salary + ". Идентификационный номер: " + id;
     }
+
+
 }
