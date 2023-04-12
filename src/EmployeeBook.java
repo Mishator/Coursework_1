@@ -7,13 +7,19 @@ public class EmployeeBook {
 
     }
 
-
     public void addEmployee(String FIO, int department, double salary) {
         if (size >= employees.length) {
             throw new IllegalArgumentException("Нельзя добавить сотрудника, закончилось место.");
         }
         Employee newEmployee = new Employee(FIO, department, salary);
         employees[size++] = newEmployee;
+    }
+
+    public void indexationSalary(int percent) {
+        for (Employee employee : employees) {
+            double currentSalary = employee.getSalary();
+            employee.setSalary((int) (currentSalary * (percent / 100f +1)));
+        }
     }
 
     public void printAllEmployees() {
@@ -68,4 +74,5 @@ public class EmployeeBook {
         }
 
     }
+
 }

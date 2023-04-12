@@ -33,5 +33,8 @@ public class Main {
         employeeBook.printAllEmployees();
         System.out.println();
 
+        employeeBook.indexationSalary(10);
+        System.out.println();
+
     }
 }
