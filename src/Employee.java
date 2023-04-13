@@ -44,5 +44,7 @@ public class Employee {
         return "ФИО сотрудника: " + FIO + ". Отдел №" + Department + ". Зарплата: " + Salary + ". Идентификационный номер: " + id;
     }
 
-
+    public int getDepartmentId() {
+        return this.getDepartmentId();
+    }
 }

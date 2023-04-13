@@ -1,5 +1,5 @@
 public class EmployeeBook {
-    private final Employee[] employees;
+    private static Employee[] employees;
     private int size;
 
     public EmployeeBook() {
@@ -18,7 +18,7 @@ public class EmployeeBook {
     public void indexationSalary(int percent) {
         for (Employee employee : employees) {
             double currentSalary = employee.getSalary();
-            employee.setSalary((int) (currentSalary * (percent / 100f +1)));
+            employee.setSalary((int) (currentSalary * (percent / 100f + 1)));
         }
     }
 
@@ -68,6 +68,7 @@ public class EmployeeBook {
         averageSalary = sum / employees.length;
         System.out.println("Среднее значение зарплат составляет: " + averageSalary + " рублей.");
     }
+
     public void printAllFullNames() {
         for (Employee employee : employees) {
             System.out.println(employee.getFIO());
@@ -75,4 +76,33 @@ public class EmployeeBook {
 
     }
 
+    public static Employee getEmployeeMinimumSalaryByDepartmentId(int departmentId) {
+        int minSalary = Integer.MAX_VALUE;
+        Employee getEmployeeMinimumSalary = null;
+        for (Employee employee : employees) {
+            if (employee.getDepartmentId() != departmentId) {
+                continue;
+            }
+            if (employee.getSalary() < minSalary) {
+                minSalary = (int) employee.getSalary();
+                getEmployeeMinimumSalary = employee;
+            }
+        }
+        return getEmployeeMinimumSalary;
+    }
+
+    public static Employee getEmployeeMaximumSalaryByDepartmentId(int departmentId) {
+        int maxSalary = Integer.MIN_VALUE;
+        Employee getEmployeeMaximumSalary = null;
+        for (Employee employee : employees) {
+            if (employee.getDepartmentId() != departmentId) {
+                continue;
+            }
+            if (employee.getSalary() > maxSalary) {
+                maxSalary = (int) employee.getSalary();
+                getEmployeeMaximumSalary = employee;
+            }
+        }
+        return getEmployeeMaximumSalary;
+    }
 }

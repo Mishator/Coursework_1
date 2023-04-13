@@ -35,6 +35,5 @@ public class Main {
 
         employeeBook.indexationSalary(10);
         System.out.println();
-
     }
 }
