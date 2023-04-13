@@ -105,4 +105,15 @@ public class EmployeeBook {
         }
         return getEmployeeMaximumSalary;
     }
+
+    public static double getSummOfSalaryOfDepartment(int departmentId) {
+        double sum = 0;
+        for (Employee employee : employees) {
+            if (employee.getDepartmentId() != departmentId) {
+                continue;
+            }
+            sum += employee.getSalary();
+        }
+        return sum;
+    }
 }
