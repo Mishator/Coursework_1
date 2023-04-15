@@ -116,4 +116,16 @@ public class EmployeeBook {
         }
         return sum;
     }
+
+    public static float getAverageSalaryOfDepartment(int departmentId) {
+        int sum = 0;
+        int memberCount = 0;
+        for (Employee employee : employees) {
+            if (employee.getDepartmentId() == departmentId) {
+                sum += employee.getSalary();
+                memberCount++;
+            }
+        }
+        return sum / (float) memberCount;
+    }
 }
