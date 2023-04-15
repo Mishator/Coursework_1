@@ -76,11 +76,11 @@ public class EmployeeBook {
 
     }
 
-    public static Employee getEmployeeMinimumSalaryByDepartmentId(int departmentId) {
+    public Employee getEmployeeMinimumSalaryByDepartmentId(int departmentId) {
         int minSalary = Integer.MAX_VALUE;
         Employee getEmployeeMinimumSalary = null;
         for (Employee employee : employees) {
-            if (employee.getDepartmentId() != departmentId) {
+            if (employee.getDepartment() != departmentId) {
                 continue;
             }
             if (employee.getSalary() < minSalary) {
@@ -91,11 +91,11 @@ public class EmployeeBook {
         return getEmployeeMinimumSalary;
     }
 
-    public static Employee getEmployeeMaximumSalaryByDepartmentId(int departmentId) {
+    public Employee getEmployeeMaximumSalaryByDepartmentId(int departmentId) {
         int maxSalary = Integer.MIN_VALUE;
         Employee getEmployeeMaximumSalary = null;
         for (Employee employee : employees) {
-            if (employee.getDepartmentId() != departmentId) {
+            if (employee.getDepartment() != departmentId) {
                 continue;
             }
             if (employee.getSalary() > maxSalary) {
@@ -106,10 +106,10 @@ public class EmployeeBook {
         return getEmployeeMaximumSalary;
     }
 
-    public static double getSummOfSalaryOfDepartment(int departmentId) {
+    public double getSummOfSalaryOfDepartment(int departmentId) {
         double sum = 0;
         for (Employee employee : employees) {
-            if (employee.getDepartmentId() != departmentId) {
+            if (employee.getDepartment() != departmentId) {
                 continue;
             }
             sum += employee.getSalary();
@@ -117,11 +117,11 @@ public class EmployeeBook {
         return sum;
     }
 
-    public static float getAverageSalaryOfDepartment(int departmentId) {
+    public float getAverageSalaryOfDepartment(int departmentId) {
         int sum = 0;
         int memberCount = 0;
         for (Employee employee : employees) {
-            if (employee.getDepartmentId() == departmentId) {
+            if (employee.getDepartment() == departmentId) {
                 sum += employee.getSalary();
                 memberCount++;
             }
@@ -131,7 +131,7 @@ public class EmployeeBook {
 
     public void indexationSalaryOfDepartment(int departmentId, int percent) {
         for (Employee employee : employees) {
-            if (employee.getDepartmentId() == departmentId) {
+            if (employee.getDepartment() == departmentId) {
                 double currentSalary = employee.getSalary();
                 employee.setSalary((int) (currentSalary * (percent / 100f + 1)));
             }
@@ -140,7 +140,23 @@ public class EmployeeBook {
 
     public void printAllEmployeesOfDepartment(int departmentId) {
         for (Employee employee : employees) {
-            if (employee.getDepartmentId() == departmentId) {
+            if (employee.getDepartment() == departmentId) {
+                System.out.println(employee);
+            }
+        }
+    }
+
+    public void printAllEmployeesWhithMinSalary(int salary) {
+        for (Employee employee : employees) {
+            if (employee.getSalary() < salary) {
+                System.out.println(employee);
+            }
+        }
+    }
+
+    public void printAllEmployeesWhithMaxSalary(int salary) {
+        for (Employee employee : employees) {
+            if (employee.getSalary() > salary) {
                 System.out.println(employee);
             }
         }

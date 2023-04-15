@@ -12,6 +12,35 @@ public class Main {
         employeeBook.addEmployee("Мантуров Глеб Макарович", 4, 48900);
         employeeBook.addEmployee("Башаров Марат Маратович", 5, 89990);
 
+        employeeBook.getEmployeeMinimumSalaryByDepartmentId(2);
+        System.out.println();
+        System.out.println("Минимальная зарплата в депортаменте " + employeeBook.getEmployeeMinimumSalaryByDepartmentId(2));
+        System.out.println();
+
+        employeeBook.getEmployeeMaximumSalaryByDepartmentId(4);
+        System.out.println();
+        System.out.println("Максимальнпя зарплата в депортаменте " + employeeBook.getEmployeeMaximumSalaryByDepartmentId(4));
+        System.out.println();
+
+        employeeBook.getSummOfSalaryOfDepartment(5);
+        System.out.println();
+        System.out.println("Сумма зарплат отдела " + employeeBook.getSummOfSalaryOfDepartment(5));
+        System.out.println();
+
+        employeeBook.getAverageSalaryOfDepartment(3);
+        System.out.println();
+        System.out.println("Средняя зарплата по отделу " + employeeBook.getAverageSalaryOfDepartment(3));
+        System.out.println();
+
+        employeeBook.printAllEmployeesOfDepartment(1);
+        System.out.println();
+
+        employeeBook.printAllEmployeesWhithMinSalary(40000);
+        System.out.println();
+
+        employeeBook.printAllEmployeesWhithMaxSalary(80000);
+        System.out.println();
+
         employeeBook.getSummOfSalary();
         System.out.println();
 
