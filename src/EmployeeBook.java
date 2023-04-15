@@ -128,4 +128,13 @@ public class EmployeeBook {
         }
         return sum / (float) memberCount;
     }
+
+    public void indexationSalaryOfDepartment(int departmentId, int percent) {
+        for (Employee employee : employees) {
+            if (employee.getDepartmentId() == departmentId) {
+                double currentSalary = employee.getSalary();
+                employee.setSalary((int) (currentSalary * (percent / 100f + 1)));
+            }
+        }
+    }
 }
