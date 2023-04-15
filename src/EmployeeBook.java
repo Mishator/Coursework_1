@@ -137,4 +137,12 @@ public class EmployeeBook {
             }
         }
     }
+
+    public void printAllEmployeesOfDepartment(int departmentId) {
+        for (Employee employee : employees) {
+            if (employee.getDepartmentId() == departmentId) {
+                System.out.println(employee);
+            }
+        }
+    }
 }
